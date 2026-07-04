@@ -25,9 +25,9 @@ Scripts in **scripts/analyses** perform VBM and cerebello-cerebral covariance an
 
 - **covar_models.py**: Runs group-level covariance between cerebellar ROIs and cereblar GM as a function of social abilities.
 
-<img width="617" height="321" alt="Screenshot 2026-07-04 at 21 57 25" src="https://github.com/user-attachments/assets/8759c6c5-a648-4948-8c43-9e6bde4e31b1" />
+<img width="790" height="409" alt="Screenshot 2026-07-04 at 22 06 52" src="https://github.com/user-attachments/assets/6316151a-cf0b-436b-8902-af50dc463df2" />
 
-<img width="526" height="329" alt="Screenshot 2026-07-04 at 21 57 38" src="https://github.com/user-attachments/assets/8e34e9cb-4a91-45b0-b044-4430050134fd" />
+<img width="749" height="468" alt="Screenshot 2026-07-04 at 22 06 58" src="https://github.com/user-attachments/assets/a8a23bc1-7072-4d1f-86ab-4ee73126c8ea" />
 
 - **overlay_plots.py**: Plots VBM and covariance results overlaid on adult functional atlases.
 
