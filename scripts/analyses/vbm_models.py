@@ -5,8 +5,8 @@
 @author: manoli
 """
 
-# NOTE: This file uses the ToMSyn ToM VBM as an example, but the process is the same for the Richardson ToM and ToMSyn action prediction analyses,
-# except in the Richardson analyses we only run the first model in this script (ToM, sex, age, TCV), and in the ToMSyn action prediction analysis ap_score is 
+# NOTE: This file uses the ToMNAP ToM VBM as an example, but the process is the same for the Richardson ToM and ToMNAP action prediction analyses,
+# except in the Richardson analyses we only run the first model in this script (ToM, sex, age, TCV), and in the ToMNAP action prediction analysis ap_score is 
 # the main predictor and ToM_score a covariate.
 
 # =============================================================================
@@ -31,12 +31,12 @@ import matplotlib.pyplot as plt
 data_dir = '/data/cereb_tom_anat'
 
 # Load behavioral data
-all_children = pd.read_csv(os.path.join(data_dir, "tomsyn", "tomsyn_behav.csv"))
+all_children = pd.read_csv(os.path.join(data_dir, "tomnap", "tomnap_behav.csv"))
 
 # Load SUIT-space images
-children_T1 = os.path.join(data_dir, "tomsyn", "T1w")
+children_T1 = os.path.join(data_dir, "tomnap", "T1w")
 
-sub_list = os.path.join(children_T1, "tomsyn_sub_list.txt")
+sub_list = os.path.join(children_T1, "tomnap_sub_list.txt")
 with open(sub_list, 'r') as file:
     subjects = [line.strip() for line in file.readlines()]
 
@@ -160,7 +160,7 @@ intercept = np.ones(len(cereb_img_sorted))
 # Run two models, one with sex, age, and TCV as covariates, and a full model with
 # action prediction and general cognitive and linguistic abilities.
 
-out_dir = os.path.join(data_dir, "results/tom/tomsyn/vbm")
+out_dir = os.path.join(data_dir, "results/tom/tomnap/vbm")
 os.makedirs(out_dir, exist_ok=True)
 
 
@@ -170,18 +170,18 @@ model_specs = [
         "columns": ["ToM", "sex", "age", "tcv", "intercept"],
         "values": [tom_score, sex, age, tcv_c, intercept],
         # Model outputs
-        "unthresh_file": os.path.join(out_dir, "tomsyn_vbm_covs_SexAgeTCV_unthresh.nii.gz"),
-        "fdr_file": os.path.join(out_dir, "tomsyn_vbm_covs_SexAgeTCV_fdr.nii.gz"),
-        "flatmap_file": os.path.join(out_dir, "tomsyn_vbm_covs_SexAgeTCV_fdr.png"),
+        "unthresh_file": os.path.join(out_dir, "tomnap_vbm_covs_SexAgeTCV_unthresh.nii.gz"),
+        "fdr_file": os.path.join(out_dir, "tomnap_vbm_covs_SexAgeTCV_fdr.nii.gz"),
+        "flatmap_file": os.path.join(out_dir, "tomnap_vbm_covs_SexAgeTCV_fdr.png"),
     },
     {
         # Specify full model
         "columns": ["ToM", "sex", "age", "tcv", "ef_score", "lang_score", "ap_score", "g", "intercept"],
         "values": [tom_score, sex, age, tcv_c, ef_score, lang_score, ap_score, g, intercept],
          # Model outputs
-        "unthresh_file": os.path.join(out_dir, "tomsyn_vbm_all_covs_unthresh.nii.gz"),
-        "fdr_file": os.path.join(out_dir, "tomsyn_vbm_all_covs_fdr.nii.gz"),
-        "flatmap_file": os.path.join(out_dir, "tomsyn_vbm_all_covs_fdr.png"),
+        "unthresh_file": os.path.join(out_dir, "tomnap_vbm_all_covs_unthresh.nii.gz"),
+        "fdr_file": os.path.join(out_dir, "tomnap_vbm_all_covs_fdr.nii.gz"),
+        "flatmap_file": os.path.join(out_dir, "tomnap_vbm_all_covs_fdr.png"),
     },
 ]
 
