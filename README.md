@@ -31,9 +31,11 @@ Scripts in **scripts/analyses** perform VBM and cerebello-cerebral covariance an
 
 - **overlay_plots.py**: Plots VBM and covariance results overlaid on adult functional atlases.
 
+- **loo_bootstrap_stability.py**: Runs leave-one-out and bootstrap resampling to test the stability of the nonverbal action prediction VBM maps.
+
 _Expected outputs_: FDR-corrected VBM/covariance z-maps and plots.
 
-_Expected runtime_: ~10 minutes per script.
+_Expected runtime_: ~10 minutes per script. The LOO and bootstrap stability analyses may take around 5 hours, depending on the computational architecture.
 
 ### Data
 All materials and data from the ToMNAP dataset are stored in a local repository at the Max Planck Institute for Human Cognitive and Brain Sciences. Fully anonymized data are available upon reasonable request, subject to the data protection regulations and ethical approvals governing the study. The ToM replication dataset (Richardson et al., 2018) is publicly available through OpenNeuro (https://openneuro.org/datasets/ds000228/versions/1.1.0). 
