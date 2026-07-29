@@ -19,15 +19,15 @@ _Expected runtime_: ~15 minutes per script per subject (manual corrections: ~20 
 Scripts in **scripts/analyses** perform VBM and cerebello-cerebral covariance analyses.
 - **vbm_models.py**: Runs group-level VBM on cerebellar modulated GM to identify volumetric changes as a function of social abilities.
 
-<img width="475" height="517" alt="Screenshot 2026-07-04 at 21 56 29" src="https://github.com/user-attachments/assets/163ab17b-e60a-43a0-b785-01c91f052505" />
+<img width="439" height="485" alt="Screenshot 2026-07-29 at 21 21 34" src="https://github.com/user-attachments/assets/ee20fc83-b1ee-43bc-b431-392edb32abd2" />
 
-<img width="669" height="306" alt="Screenshot 2026-07-04 at 21 56 33" src="https://github.com/user-attachments/assets/967d8406-0ce6-4859-aaf7-b0eeca0e390e" />
+<img width="632" height="299" alt="Screenshot 2026-07-29 at 21 22 04" src="https://github.com/user-attachments/assets/55a04a6d-afc0-4036-9c18-8dde1453e26a" />
 
 - **covar_models.py**: Runs group-level covariance between cerebellar ROIs and cereblar GM as a function of social abilities.
 
-<img width="790" height="409" alt="Screenshot 2026-07-04 at 22 06 52" src="https://github.com/user-attachments/assets/6316151a-cf0b-436b-8902-af50dc463df2" />
+<img width="718" height="367" alt="Screenshot 2026-07-29 at 21 22 25" src="https://github.com/user-attachments/assets/26334812-ca91-4a29-be57-784073c92121" />
 
-<img width="749" height="468" alt="Screenshot 2026-07-04 at 22 06 58" src="https://github.com/user-attachments/assets/a8a23bc1-7072-4d1f-86ab-4ee73126c8ea" />
+<img width="716" height="442" alt="Screenshot 2026-07-29 at 21 22 40" src="https://github.com/user-attachments/assets/a79463f5-f35e-4c90-953b-dc71662476fa" />
 
 - **overlay_plots.py**: Plots VBM and covariance results overlaid on adult functional atlases.
 
