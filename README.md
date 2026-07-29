@@ -36,7 +36,7 @@ _Expected outputs_: FDR-corrected VBM/covariance z-maps and plots.
 _Expected runtime_: ~10 minutes per script.
 
 ### Data
-All materials and data from the ToMSyn dataset are stored in a local repository at the Max Planck Institute for Human Cognitive and Brain Sciences. Fully anonymized data are available upon reasonable request, subject to the data protection regulations and ethical approvals governing the study. The ToM replication dataset (Richardson et al., 2018) is publicly available through OpenNeuro (https://openneuro.org/datasets/ds000228/versions/1.1.0). 
+All materials and data from the ToMNAP dataset are stored in a local repository at the Max Planck Institute for Human Cognitive and Brain Sciences. Fully anonymized data are available upon reasonable request, subject to the data protection regulations and ethical approvals governing the study. The ToM replication dataset (Richardson et al., 2018) is publicly available through OpenNeuro (https://openneuro.org/datasets/ds000228/versions/1.1.0). 
 
 Adult maps used to contextualize the developmental findings are publicly available: MDTB cerebellar atlas (King et al., 2019; https://github.com/DiedrichsenLab/cerebellar_atlases/tree/master/King_2019), cerebellar resting-state functional networks (Buckner et al., 2011; https://github.com/DiedrichsenLab/cerebellar_atlases/tree/master/Buckner_2011), ToM meta-analysis maps (Schurz et al., 2021; https://osf.io/pav27/files/mrb35), and cerebral resting-state functional networks (Yeo et al., 2011; https://github.com/ThomasYeoLab/CBIG/tree/master/stable_projects/brain_parcellation/Yeo2011_fcMRI_clustering/1000subjects_reference/Yeo_JNeurophysiol11_SplitLabels).
 
