@@ -72,8 +72,8 @@ parcel_cmap = LinearSegmentedColormap.from_list('parcel', [bg_color, parcel_colo
 
 dataset_specs = [
     {
-        "stat_file": os.path.join(data_dir, "results/tom/tomsyn/vbm/tomsyn_vbm_covs_SexAgeTCV_fdr.nii.gz"),
-        "overlay_file": os.path.join(data_dir, "results/tom/tomsyn/vbm/tomsyn_vbm_king_overlay.png"),
+        "stat_file": os.path.join(data_dir, "results/tom/tomnap/vbm/tomnap_vbm_covs_SexAgeTCV_fdr.nii.gz"),
+        "overlay_file": os.path.join(data_dir, "results/tom/tomnap/vbm/tomnap_vbm_king_overlay.png"),
     },
     {
         "stat_file": os.path.join(data_dir, "results/tom/richardson/vbm/richardson_vbm_covs_SexAgeTCV_fdr.nii.gz"),
@@ -134,7 +134,7 @@ for spec in dataset_specs:
 # =============================================================================
 
 # ---- VBM results ----
-stat_path = os.path.join(data_dir, "results/ap/tomsyn/vbm/tomsyn_vbm_covs_SexAgeTCV_fdr.nii.gz")
+stat_path = os.path.join(data_dir, "results/ap/tomnap/vbm/tomnap_vbm_covs_SexAgeTCV_fdr.nii.gz")
 stat_img = nib.load(stat_path)
 stat_surf = np.asarray(flatmap.vol_to_surf(stat_img)).squeeze()
 
@@ -188,12 +188,12 @@ overlay_specs = [
     {
         "overlay_surf": sal_bin,
         "parcel_opacity": 0.2,
-        "overlay_file": os.path.join(data_dir, "results/ap/tomsyn/vbm/tomsyn_vbm_sal_overlay.png"),
+        "overlay_file": os.path.join(data_dir, "results/ap/tomnap/vbm/tomnap_vbm_sal_overlay.png"),
     },
     {
         "overlay_surf": ao_bin,
         "parcel_opacity": 0.4,
-        "overlay_file": os.path.join(data_dir, "results/ap/tomsyn/vbm/tomsyn_vbm_king_overlay.png"),
+        "overlay_file": os.path.join(data_dir, "results/ap/tomnap/vbm/tomnap_vbm_king_overlay.png"),
     },
 ]
 
@@ -252,8 +252,8 @@ bin_img = nib.Nifti1Image(
 # Load and plot covariance results
 dataset_specs = [
     {
-        "stat_file": os.path.join(data_dir, "results/tom/tomsyn/covariance/tomsyn_covar_SexAgeTIV_lcrus2_fdr.nii.gz"),
-        "overlay_file": os.path.join(data_dir, "results/tom/tomsyn/covariance/tomsyn_covar_lcrus2_ToMMeta_SexAgeTIV_lcrus2.png"),
+        "stat_file": os.path.join(data_dir, "results/tom/tomnap/covariance/tomnap_covar_SexAgeTIV_lcrus2_fdr.nii.gz"),
+        "overlay_file": os.path.join(data_dir, "results/tom/tomnap/covariance/tomnap_covar_lcrus2_ToMMeta_SexAgeTIV_lcrus2.png"),
     },
     {
         "stat_file": os.path.join(data_dir, "results/tom/richardson/covariance/richardson_covar_SexAgeTIV_lcrus2_fdr.nii.gz"),
@@ -322,7 +322,7 @@ sal_img = nib.Nifti1Image(
 for roi in rois:
 
     # ---- Load and binarize stat image ----
-    stat_img_path = os.path.join(data_dir, f'results/ap/tomsyn/covariance/tomsyn_covar_SexAgeTIV_{roi}_fdr.nii.gz')
+    stat_img_path = os.path.join(data_dir, f'results/ap/tomnap/covariance/tomnap_covar_SexAgeTIV_{roi}_fdr.nii.gz')
     stat_img = nib.load(stat_img_path)
 
     stat_data = stat_img.get_fdata()
@@ -355,6 +355,6 @@ for roi in rois:
     )
 
     display.savefig(
-        os.path.join(data_dir, f"results/ap/tomsyn/covariance/tomsyn_covar_sal_SexAgeTIV_{roi}.png"),
+        os.path.join(data_dir, f"results/ap/tomnap/covariance/tomnap_covar_sal_SexAgeTIV_{roi}.png"),
         dpi=300
     )
