@@ -43,7 +43,7 @@ with open(sub_list, 'r') as file:
 cereb_img_list = []
 
 for sub in subjects:
-    sub_dir = os.path.join(children_T1, sub, suit)
+    sub_dir = os.path.join(children_T1, sub, 'suit')
     file_path = os.path.join(sub_dir, f'wd{sub}_T1w_seg1.nii') # SUIT-space modulated GM
     # Check if file exists
     if os.path.exists(file_path):
@@ -67,7 +67,7 @@ gm_img_list = []
 wm_img_list = []
 
 for sub in subjects:
-    sub_dir = os.path.join(children_T1, sub, suit)
+    sub_dir = os.path.join(children_T1, sub, 'suit')
     gm_path = os.path.join(sub_dir, f'wd{sub}_T1w_seg1.nii')   # GM
     wm_path = os.path.join(sub_dir, f'wd{sub}_T1w_seg2.nii')   # WM
 
