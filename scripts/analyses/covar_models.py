@@ -5,8 +5,8 @@
 @author: manoli
 """
 
-# NOTE: This file uses the ToMSyn ToM covariance as an example, but the process is the same for the Richardson ToM and ToMSyn action prediction analyses,
-# except in the Richardson analyses we only run the first model in this script (ToM, sex, age, TCV), and in the ToMSyn action prediction analysis ap_score is 
+# NOTE: This file uses the ToMNAP ToM covariance as an example, but the process is the same for the Richardson ToM and ToMNAP action prediction analyses,
+# except in the Richardson analyses we only run the first model in this script (ToM, sex, age, TCV), and in the ToMNAP action prediction analysis ap_score is 
 # the main predictor and ToM_score a covariate.
 
 # =============================================================================
@@ -33,12 +33,12 @@ from nilearn.input_data import NiftiMasker
 data_dir = '/data/cereb_tom_anat'
 
 # Load behavioral data
-all_children = pd.read_csv(os.path.join(data_dir, "tomsyn", "tomsyn_behav.csv"))
+all_children = pd.read_csv(os.path.join(data_dir, "tomnap", "tomnap_behav.csv"))
 
 # Load SUIT-space images
-children_T1 = os.path.join(data_dir, "tomsyn", "T1w")
+children_T1 = os.path.join(data_dir, "tomnap", "T1w")
 
-sub_list = os.path.join(children_T1, "tomsyn_sub_list.txt")
+sub_list = os.path.join(children_T1, "tomnap_sub_list.txt")
 with open(sub_list, 'r') as file:
     subjects = [line.strip() for line in file.readlines()]
     
@@ -198,7 +198,7 @@ cereb_maskers = {
 # EXTRACT ROI DATA
 # =============================================================================
 
-out_dir = os.path.join(data_dir, "results/tom/tomsyn/covariance")
+out_dir = os.path.join(data_dir, "results/tom/tomnap/covariance")
 os.makedirs(out_dir, exist_ok=True)
 
 rows = []
@@ -232,7 +232,7 @@ covar_data["lang_c"] = covar_data["SETK_MW_T"] - covar_data["SETK_MW_T"].mean()
 covar_data["g_c"] = covar_data["ZK_ABC_sum"] - covar_data["ZK_ABC_sum"].mean()
 covar_data["ap_c"] = covar_data["ap_score"] - covar_data["ap_score"].mean()
 
-covar_data_csv = os.path.join(out_dir, 'tomsyn_covar_data.csv')
+covar_data_csv = os.path.join(out_dir, 'tomnap_covar_data.csv')
 covar_data.to_csv(covar_data_csv, index=False)
 
 print(covar_data.head())
@@ -330,7 +330,7 @@ for cereb in cereb_roi_names:
         )
 
         # Save
-        base = f"tomsyn_covar_{model_name}_{cereb}"
+        base = f"tomnap_covar_{model_name}_{cereb}"
         z_path   = os.path.join(out_dir, f"{base}_unthresh.nii.gz")
         thr_path = os.path.join(out_dir, f"{base}_thresh_fdr.nii.gz")
         nib.save(z_map, z_path)
@@ -338,7 +338,7 @@ for cereb in cereb_roi_names:
 
         # Glass brain plot of the interaction 
         glass_path = os.path.join(
-            out_dir, f"tomsyn_tom_covar_{model_name}_{cereb}_fdr.png"
+            out_dir, f"tomnap_tom_covar_{model_name}_{cereb}_fdr.png"
         )
         display = plot_glass_brain(
             thr_map,
@@ -365,6 +365,6 @@ for cereb in cereb_roi_names:
 
 # Save summary
 summary_df = pd.DataFrame(summary_rows)
-summary_csv = os.path.join(out_dir, "tomsyn_expl_voxwise_covar_summary.csv")
+summary_csv = os.path.join(out_dir, "tomnap_expl_voxwise_covar_summary.csv")
 summary_df.to_csv(summary_csv, index=False)
 print(f"[OK] Saved voxelwise interaction maps & summary: {summary_csv}")
