@@ -326,7 +326,7 @@ for cereb in cereb_roi_names:
         # Interaction contrast
         z_map = slm.compute_contrast("Int", output_type="z_score")
         thr_map, thr = threshold_stats_img(
-            z_map, alpha=0.001, height_control="fdr", two_sided=True
+            z_map, alpha=0.05, height_control="fdr", two_sided=True
         )
 
         # Save
