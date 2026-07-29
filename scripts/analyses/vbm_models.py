@@ -208,7 +208,7 @@ for spec in model_specs:
 
     # ---- FDR Correction ----
     thresholded_map, threshold = threshold_stats_img(
-        z_map, alpha=.001, height_control='fdr', two_sided=True)
+        z_map, alpha=.05, height_control='fdr', two_sided=True)
 
     # ---- Save images ----
     nib.save(z_map, spec["unthresh_file"])
