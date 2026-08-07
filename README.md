@@ -1,7 +1,7 @@
 # The cerebellum supports two systems for understanding others in early childhood 
 
 #### This repository contains analysis scripts and cerebellar normative models presented in this manuscript: 
-TBD
+https://www.biorxiv.org/content/10.64898/2026.08.03.742430v1
 
 ### Instructions
 If you'd like to reproduce the analyses in the manuscript, you can run the following scripts:
